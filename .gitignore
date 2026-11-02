@@ -1,0 +1,7 @@
+/data/
+/.env
+/.env.*
+!.env.example
+/target/
+/crates/colabo-server/static/build/
+/crates/colabo-server/web/node_modules/

@@ -1,0 +1,43 @@
+[workspace]
+resolver = "3"
+members = [
+    "crates/collab-core",
+    "crates/colabo-domain",
+    "crates/colabo-storage",
+    "crates/colabo-collaboration",
+    "crates/colabo-server",
+]
+
+[workspace.package]
+version = "0.1.0"
+edition = "2024"
+rust-version = "1.95"
+license = "MIT"
+
+[workspace.dependencies]
+axum = { version = "0.8", features = ["ws", "multipart"] }
+base64 = "0.22"
+chrono = { version = "0.4", features = ["serde"] }
+collab-core = { path = "crates/collab-core" }
+colabo-domain = { path = "crates/colabo-domain" }
+colabo-storage = { path = "crates/colabo-storage" }
+colabo-collaboration = { path = "crates/colabo-collaboration" }
+dotenvy = "0.15"
+futures-util = "0.3"
+getrandom = "0.3"
+gix = "0.90"
+mime_guess = "2"
+openidconnect = { version = "4.0.1", default-features = false, features = ["reqwest", "rustls-tls"] }
+reqwest = { version = "0.12", default-features = false, features = ["json", "rustls-tls"] }
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+sha2 = "0.10"
+tempfile = "3"
+thiserror = "2"
+tokio = { version = "1", features = ["full"] }
+tower-http = { version = "0.6", features = ["fs", "compression-gzip", "limit", "trace"] }
+tracing = "0.1"
+tracing-subscriber = { version = "0.3", features = ["env-filter"] }
+url = "2"
+uuid = { version = "1", features = ["v7", "serde"] }
+yaml_serde = "0.10.4"
